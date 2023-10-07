@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 36px;
+  background: rgb(40, 33, 166);
+  background: linear-gradient(
+    90deg,
+    rgba(40, 33, 166, 1) 0%,
+    rgba(74, 74, 222, 1) 43%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+}
