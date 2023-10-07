@@ -1,5 +1,5 @@
 function Home() {
-  return <div className="main">Vite + React + TS</div>;
+  return <div className="main">Al xorazmiy</div>;
 }
 
 export default Home;
