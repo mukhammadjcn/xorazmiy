@@ -24,14 +24,14 @@ function LocationSection() {
             </div>
           </div>
           <div className="location-section-img">
-            <img src="src/assets/img/map.png" alt="map image" />
+            <img src="/img/map.png" alt="map image" />
             <LocationIcon />
           </div>
         </div>
       </div>
       <img
         className="location-section-stars-img"
-        src="src/assets/img/stars.png"
+        src="/img/stars.png"
         alt="stars image"
       />
     </div>

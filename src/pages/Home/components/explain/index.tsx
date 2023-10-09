@@ -11,7 +11,7 @@ function ExplainSection() {
             ishtirokchi talaba, 1 nafar rahbar va 1 nafar ilmiy maslahatchi)
           </p>
         </div>
-        <img src="src/assets/img/explain-1.png" alt="explain image" />
+        <img src="/img/explain-1.png" alt="explain image" />
       </div>
       <div className="section-explain-steps">
         <div>
@@ -24,7 +24,7 @@ function ExplainSection() {
               teatri zalida test va yozma ish ko‘rinishida o‘tkaziladi.
             </span>
           </p>
-          <img src="src/assets/img/explain-2.png" alt="explain image" />
+          <img src="/img/explain-2.png" alt="explain image" />
         </div>
         <div>
           <h4>Ikkinchi bosqich</h4>
@@ -36,7 +36,7 @@ function ExplainSection() {
               qilinadi.
             </span>
           </p>
-          <img src="src/assets/img/explain-3.png" alt="explain image" />
+          <img src="/img/explain-3.png" alt="explain image" />
         </div>
       </div>
     </div>

@@ -69,13 +69,13 @@ function AboutSecttion() {
             </div>
           </div>
           <div className="section-about-info-img">
-            <img src="src/assets/img/image2.png" alt="Al-Xorazmiy's picture" />
+            <img src="/img/image2.png" alt="Al-Xorazmiy's picture" />
           </div>
         </div>
       </div>
       <img
         className="section-about-stars"
-        src="src/assets/img/stars.png"
+        src="/img/stars.png"
         alt="stars picture"
       />
     </div>

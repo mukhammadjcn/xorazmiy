@@ -21,7 +21,7 @@ function HeaderSection() {
   return (
     <div className="header">
       <div className="header-logo">
-        <img src="src/assets/img/logo.png" alt="logo image" />
+        <img src="/img/logo.png" alt="logo image" />
         <p>akhimo.uz</p>
       </div>
       <div className="header-menu">
