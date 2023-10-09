@@ -1,0 +1,97 @@
+@import 'src/styles/variable.scss';
+
+.section-about {
+  position: relative;
+
+  &-title {
+    padding: 20px;
+    display: flex;
+    gap: 50px;
+    z-index: 5;
+    position: relative;
+
+    & > :nth-last-of-type(2) {
+      text-align: center;
+      position: relative;
+
+      .bag-icon {
+        margin-bottom: 24px;
+        flex-shrink: 0;
+        display: block;
+      }
+      .green-gradient {
+        position: absolute;
+        top: -4%;
+        left: -65%;
+      }
+    }
+
+    & > :nth-last-of-type(1) {
+      p {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 24px;
+      }
+      h3 {
+        font-size: 48px;
+        font-weight: 600;
+        max-width: 1061px;
+
+        span {
+          color: $clr_green;
+        }
+      }
+    }
+  }
+
+  &-info {
+    display: flex;
+    border-radius: 12px;
+    background-color: #161b22;
+    border: 1px solid $clr_border;
+    overflow: hidden;
+
+    &-img {
+      padding: 36px 40px;
+      background-color: #040d21;
+      img {
+        width: 520px;
+        object-fit: cover;
+      }
+    }
+
+    &-menu {
+      padding: 16px 0 0 16px;
+      display: flex;
+      border-bottom: 1px solid $clr_border;
+      div {
+        padding: 8px 16px;
+      }
+      & > div:nth-of-type(1) {
+        background-color: $clr_bgd;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+      }
+    }
+    &-text {
+      padding: 24px;
+      & > p:nth-of-type(1) {
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 21px;
+        color: $clr_grey;
+      }
+    }
+  }
+
+  &-stars {
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    top: -106px;
+    width: 800px;
+    z-index: 0;
+  }
+}
