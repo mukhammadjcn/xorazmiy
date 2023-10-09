@@ -1,6 +1,7 @@
 @import 'src/styles/variable.scss';
 
 .section-explain {
+  max-width: 1800px;
   &-requirements {
     border-radius: 12px;
     border: 1px solid $clr_border;

@@ -3,6 +3,7 @@
 .location-section {
   position: relative;
   &-content {
+    max-width: 1800px;
     display: flex;
     position: relative;
     z-index: 5;

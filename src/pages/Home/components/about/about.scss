@@ -3,6 +3,10 @@
 .section-about {
   position: relative;
 
+  &-content {
+    max-width: 1800px;
+  }
+
   &-title {
     padding: 20px;
     display: flex;

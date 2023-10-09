@@ -1,1 +1,58 @@
 @import 'src/styles/variable.scss';
+
+.section-news {
+  padding: 48px 0 72px 0;
+  max-width: 1800px;
+  &-top {
+    margin-bottom: 32px;
+    @include flex-space-between;
+
+    div {
+      display: flex;
+      gap: 12px;
+    }
+
+    p {
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    .slider-prev,
+    .slider-next {
+      padding: 12px;
+      border-radius: 50%;
+      background-color: #161b22;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: #25282b;
+      }
+    }
+  }
+  &-card {
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    background: #161b22;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    div {
+      padding: 16px;
+
+      p {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        margin-bottom: 16px;
+        @include line-clamp2;
+      }
+      span {
+        font-size: 14px;
+        color: $clr_grey;
+      }
+    }
+  }
+}

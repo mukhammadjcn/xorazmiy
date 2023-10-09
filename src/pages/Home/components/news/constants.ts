@@ -15,4 +15,16 @@ export const NewsCardData = [
     date: '30-Oct-2018',
     img: '/img/news3.png',
   },
+  {
+    title:
+      'The first international Muhammad al-Khorezmi Olympiad will be held in Uzbekistan',
+    date: '30-Oct-2018',
+    img: '/img/news1.png',
+  },
+  {
+    title:
+      'The first international Muhammad al-Khorezmi Olympiad will be held in Uzbekistan',
+    date: '30-Oct-2018',
+    img: '/img/news2.png',
+  },
 ];

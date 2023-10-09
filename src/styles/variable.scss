@@ -32,3 +32,10 @@ $font-family-primary: 'Inter', sans-serif;
   justify-content: center;
   align-items: center;
 }
+
+@mixin line-clamp2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
