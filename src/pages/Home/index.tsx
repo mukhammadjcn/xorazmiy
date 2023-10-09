@@ -3,6 +3,7 @@ import ExplainSection from './components/explain';
 import HeaderSection from './components/header/Header';
 import HeroSection from './components/hero/Hero';
 import LocationSection from './components/location';
+import NewsSection from './components/news';
 import './home.scss';
 
 function Home() {
@@ -13,6 +14,7 @@ function Home() {
       <About />
       <LocationSection />
       <ExplainSection />
+      <NewsSection />
     </div>
   );
 }

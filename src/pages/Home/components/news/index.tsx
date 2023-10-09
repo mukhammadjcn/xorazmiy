@@ -29,9 +29,9 @@ function NewsSection() {
         {NewsCardData.map((news) => (
           <SwiperSlide>
             <div className="section-news-card">
-              <img src="/img/news1.png" alt="news image" />
-              <p>1st Al Khwarizmi International Mathematical Olympiad</p>
-              <span>30-Oct-2018</span>
+              <img src={news.img} />
+              <p>{news.title}</p>
+              <span>{news.date}</span>
             </div>
           </SwiperSlide>
         ))}
