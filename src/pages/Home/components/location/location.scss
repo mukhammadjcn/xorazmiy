@@ -1,0 +1,70 @@
+@import 'src/styles/variable.scss';
+
+.location-section {
+  position: relative;
+  &-content {
+    display: flex;
+    position: relative;
+    z-index: 5;
+  }
+
+  &-icon {
+    flex-shrink: 0;
+    margin-right: 40px;
+  }
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 79px;
+
+    img {
+      width: 461px;
+      height: 461px;
+    }
+  }
+
+  &-adress {
+    font-size: 24px;
+    margin-bottom: 294px;
+
+    p {
+      margin-top: 4px;
+      color: $clr_grey;
+    }
+  }
+
+  &-date {
+    p {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    span {
+      font-size: 64px;
+      color: $clr_green;
+      display: block;
+      margin: 16px 0;
+    }
+    h3 {
+      font-size: 20px;
+    }
+  }
+
+  &-img {
+    position: relative;
+
+    .location-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &-stars-img {
+    width: 900px;
+    position: absolute;
+    bottom: -28%;
+    right: 0%;
+    z-index: 0;
+  }
+}

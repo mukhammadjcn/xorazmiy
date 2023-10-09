@@ -1,0 +1,66 @@
+@import 'src/styles/variable.scss';
+
+.section-explain {
+  &-requirements {
+    border-radius: 12px;
+    border: 1px solid $clr_border;
+    background: #161b22;
+    display: flex;
+    justify-content: space-between;
+    padding: 64px;
+    margin-bottom: 32px;
+
+    img {
+      width: 474px;
+      object-fit: cover;
+    }
+
+    div {
+      h4 {
+        font-size: 24px;
+        color: #ffa28b;
+        font-weight: 600;
+        line-height: 68px;
+        margin-bottom: 12px;
+      }
+      p {
+        font-size: 24px;
+        line-height: 32px;
+
+        span {
+          color: $clr_grey;
+        }
+      }
+    }
+  }
+
+  &-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+
+    div {
+      border-radius: 12px;
+      border: 1px solid #30363d;
+      background: #161b22;
+      padding: 64px;
+
+      h4 {
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 68px;
+        color: $clr_primary;
+      }
+      p {
+        color: #ebf5ff;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 40px;
+
+        span {
+          color: $clr_grey;
+        }
+      }
+    }
+  }
+}
