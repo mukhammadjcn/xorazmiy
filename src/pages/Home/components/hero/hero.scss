@@ -1,0 +1,29 @@
+@import 'src/styles/variable.scss';
+
+.hero-section {
+  background-image: url('src/assets/img/hero.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 854px;
+  // height: 1080px;
+
+  &-content {
+    padding-top: 250px;
+    @include flex;
+    gap: 146px;
+
+    div {
+      h1 {
+        font-size: 72px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 80px;
+        max-width: 896px;
+      }
+    }
+    img {
+      width: 366px;
+      object-fit: cover;
+    }
+  }
+}

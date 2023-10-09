@@ -1,0 +1,49 @@
+@import 'src/styles/variable.scss';
+
+.header {
+  padding: 16px 12px;
+  @include flex;
+  gap: 24px;
+  border-radius: 12px;
+  border: 1.4px solid rgba(255, 255, 255, 0.4);
+  background: var(--windows-glass, rgba(128, 128, 128, 0.3));
+  background-blend-mode: luminosity;
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &-logo {
+    @include flex;
+    gap: 5px;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+
+    p {
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 600;
+      color: $clr_white;
+    }
+  }
+
+  &-menu {
+    @include flex;
+    gap: 40px;
+
+    a {
+      font-size: 18px;
+      line-height: 24px;
+      color: $clr_white;
+      white-space: nowrap;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #b0b0b0;
+      }
+    }
+  }
+}

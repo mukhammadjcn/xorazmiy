@@ -1,0 +1,28 @@
+@import 'src/styles/variable.scss';
+
+.select-language {
+  @include flex;
+  gap: 4px;
+  cursor: pointer;
+  color: $clr_white;
+
+  p {
+    font-size: 16px;
+  }
+
+  &-dropDown {
+    font-size: 16px;
+  }
+
+  &-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  &-icon {
+    font-size: 16px;
+  }
+}
+.ant-dropdown-menu {
+  background: var(--windows-glass, rgba(128, 128, 128, 0.6)) !important;
+}
