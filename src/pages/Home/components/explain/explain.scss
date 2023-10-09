@@ -45,6 +45,8 @@
       border: 1px solid #30363d;
       background: #161b22;
       padding: 64px;
+      display: flex;
+      flex-direction: column;
 
       h4 {
         font-size: 40px;
@@ -57,10 +59,15 @@
         font-size: 24px;
         line-height: 32px;
         margin-bottom: 40px;
+        flex-grow: 1;
 
         span {
           color: $clr_grey;
         }
+      }
+      img {
+        width: 300px;
+        margin: auto;
       }
     }
   }

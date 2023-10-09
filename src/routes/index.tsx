@@ -6,13 +6,11 @@ import SignUpPage from 'src/pages/auth/signUp';
 function RoutElements() {
   return (
     <Routes>
-      <Route path="/auth">
-        <Route path="signup" element={<SignUpPage />} />
-      </Route>
       <Route path="/" element={<MainLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="*" element={<h2>Not found</h2>} />
+        <Route path="/register" element={<SignUpPage />} />
       </Route>
+      <Route path="*" element={<h2>Not found</h2>} />
     </Routes>
   );
 }

@@ -32,9 +32,6 @@ function AboutSecttion() {
               <div>
                 <p>Asarlar</p>
               </div>
-              <div>
-                <p>package.json</p>
-              </div>
             </div>
             <div className="section-about-info-text">
               <p>

@@ -1,5 +1,6 @@
 import { Button } from 'antd';
 import './hero.scss';
+import { Link } from 'react-router-dom';
 
 function HeroSection() {
   return (
@@ -7,9 +8,16 @@ function HeroSection() {
       <div className="hero-section-content container">
         <div>
           <h1>Muhammad al-Xorazmiy nomidagi xalqaro olimpiada</h1>
-          <Button type="primary">Ro‘yxatdan o‘tish</Button>
+
+          <Link to={'/register'}>
+            <Button type="primary">Ro‘yxatdan o‘tish</Button>
+          </Link>
         </div>
-        <img src="/img/main.png" alt="Al-Xorazmiy's image" />
+        <img
+          src="/img/main.png"
+          alt="Al-Xorazmiy's image"
+          className="hero-img"
+        />
         <img
           className="hero-img-1"
           src="/img/hero-1.png"

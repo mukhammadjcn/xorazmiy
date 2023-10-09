@@ -28,14 +28,19 @@ function NewsSection() {
       </div>
       <Swiper
         spaceBetween={30}
-        // slidesPerView={
-        //   isMobileSlider ? 1 : isTabletSlider ? 2 : isLaptopSlider ? 3 : 4
-        // }
-        slidesPerView={3}
+        slidesPerView={1}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
         className="section-news-slider"
+        breakpoints={{
+          600: {
+            slidesPerView: 2,
+          },
+          900: {
+            slidesPerView: 3,
+          },
+        }}
       >
         {NewsCardData.map((news) => (
           <SwiperSlide>
