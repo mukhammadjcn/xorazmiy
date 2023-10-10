@@ -72,6 +72,16 @@ export const signUpFormData = [
   },
 ];
 
+export const codeFormData = [
+  {
+    name: 'code',
+    label: 'Tasdiqlash kodi',
+    placeholder: 'Kodni kiriting',
+    message: 'Please input your code!',
+    className: 'full mb-36',
+  },
+];
+
 export const FormOptions = [
   { value: 'jack', label: 'Jack' },
   { value: 'lucy', label: 'Lucy' },

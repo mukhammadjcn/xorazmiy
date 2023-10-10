@@ -5,7 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 220px 0 120px;
   &-form {
     width: 928px;
     background-color: #161b22;
@@ -20,13 +21,39 @@
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 24px;
+      margin: 0 2rem 24px;
     }
 
     .auth-form {
       path {
         color: #fff;
       }
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .signUp {
+    .signUp-form {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .signUp {
+    &-form {
+      h2 {
+        font-size: 32px;
+        line-height: 48px;
+        margin: 0 0 12px;
+      }
+    }
+    .half {
+      width: 100%;
+    }
+    .form-form {
+      margin: 0;
     }
   }
 }

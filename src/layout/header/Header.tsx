@@ -12,11 +12,11 @@ const menu = [
   },
   {
     name: 'Dastur',
-    link: '#explain',
+    link: '/plan',
   },
   {
     name: 'Ishtirokchilar',
-    link: '#participants',
+    link: '/participants',
   },
 ];
 
@@ -24,14 +24,18 @@ function HeaderSection() {
   const [open, setOpen] = useState(false);
   return (
     <div className="header">
-      <div className="header-logo">
-        <img src="/img/logo.png" alt="logo image" />
-        <p>akhimo.uz</p>
-      </div>
+      <Link to={'/'}>
+        <div className="header-logo">
+          <img src="/img/logo.png" alt="logo image" />
+          <p>akhimo.uz</p>
+        </div>
+      </Link>
       <div className={`header-menu ${open ? 'header-menu-active' : ''}`}>
         {menu.map((el) => (
           <div className="home-header-items" key={el.link}>
-            <a href={el.link}>{el.name}</a>
+            <Link to={el.link} onClick={() => window.reload()}>
+              {el.name}
+            </Link>
           </div>
         ))}
         <SelectLang />

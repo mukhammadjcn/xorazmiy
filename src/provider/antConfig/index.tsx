@@ -43,6 +43,13 @@ function AntConfigProvider({ children }: ProviderProps) {
           Dropdown: {
             colorBgElevated: '#37393C',
           },
+          Table: {
+            headerBg: '#161B22',
+            headerBorderRadius: 0,
+            colorBgContainer: '#0D1117',
+            borderColor: '#494F57',
+            fontSize: 16,
+          },
         },
       }}
     >
