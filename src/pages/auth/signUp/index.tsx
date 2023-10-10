@@ -12,7 +12,7 @@ function SignUpPage() {
         <div className="signUp-form">
           <h2>Tasdiqlash</h2>
           <Form
-            // onFinish={onFinish}
+            onFinish={() => setCodeSection(true)}
             layout="vertical"
             requiredMark={false}
             className="form-form auth-form"
