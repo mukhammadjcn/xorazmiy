@@ -33,9 +33,7 @@ function HeaderSection() {
       <div className={`header-menu ${open ? 'header-menu-active' : ''}`}>
         {menu.map((el) => (
           <div className="home-header-items" key={el.link}>
-            <Link to={el.link} onClick={() => window.reload()}>
-              {el.name}
-            </Link>
+            <a href={el.link}>{el.name}</a>
           </div>
         ))}
         <SelectLang />
