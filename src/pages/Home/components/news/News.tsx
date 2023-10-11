@@ -8,13 +8,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { NewsCardData } from './constants';
+import { useTranslation } from 'react-i18next';
 
 function NewsSection() {
+  const { t } = useTranslation();
   const swiperRef = useRef<SwiperCore>();
   return (
     <div className="section-news container">
       <div className="section-news-top">
-        <p>Yangiliklar</p>
+        <p>{t('news')}</p>
         <div>
           <ArrowLeftOutlined
             className="slider-prev"

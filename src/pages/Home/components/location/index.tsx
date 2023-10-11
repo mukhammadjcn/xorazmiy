@@ -1,7 +1,10 @@
 import { BranchProductivityIcon, LocationIcon } from 'src/assets/svg';
 import './location.scss';
+import { useTranslation } from 'react-i18next';
 
 function LocationSection() {
+  const { t } = useTranslation();
+
   return (
     <div className="location-section">
       <div className="location-section-content container">
@@ -11,16 +14,13 @@ function LocationSection() {
         <div className="location-section-info">
           <div>
             <div className="location-section-adress">
-              <h4>Olimpiada o‘tkaziladigan manzil:</h4>
-              <p>Nukus shahri, Qorqqalpog‘iston O‘zbekiston</p>
+              <h4>{t('location')}</h4>
+              <p>{t('location1')}</p>
             </div>
             <div className="location-section-date">
-              <p>Ariza topshirish muhlati 2023-yil</p>
-              <span>10-15 oktyabr</span>
-              <h3>
-                Olimpiadada ishtirok etish uchun shu yerda ro’yxatdan
-                o’tishingiz mumkin.
-              </h3>
+              <p>{t('apply')}</p>
+              <span>{t('apply1')}</span>
+              <h3>{t('register_info')}</h3>
             </div>
           </div>
           <div className="location-section-img">

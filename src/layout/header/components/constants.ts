@@ -5,15 +5,15 @@ interface IlangData {
 
 export const LanguageData: IlangData[] = [
   {
-    name: "English",
-    short_name: "Eng",
+    name: 'English',
+    short_name: 'en',
   },
   {
-    name: "Русский",
-    short_name: "Рус",
+    name: 'Uzbek',
+    short_name: 'uz',
   },
   {
-    name: "Uzbekcha",
-    short_name: "Uzb",
+    name: 'Russian',
+    short_name: 'ru',
   },
 ];

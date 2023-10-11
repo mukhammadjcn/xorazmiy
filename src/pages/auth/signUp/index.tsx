@@ -3,8 +3,10 @@ import { GiveLang, IName, codeFormData, signUpFormData } from './constants';
 import './signUp.scss';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 function SignUpPage() {
+  const { t } = useTranslation();
   const [code, setCode] = useState('');
   const [codeSection, setCodeSection] = useState(false);
   const [countries, setCountries] = useState<IName[]>([
@@ -63,7 +65,7 @@ function SignUpPage() {
     <div className="signUp">
       {codeSection ? (
         <div className="signUp-form">
-          <h2>Tasdiqlash</h2>
+          <h2>{t('confirm')}</h2>
           <Form
             onFinish={() => setCodeSection(true)}
             layout="vertical"
@@ -92,13 +94,13 @@ function SignUpPage() {
               type="primary"
               // onClick={() => navigate("/auth/password")}
             >
-              Ro'yxatdan o'tish
+              {t('register')}
             </Button>
           </Form>
         </div>
       ) : (
         <div className="signUp-form">
-          <h2>Ro‘yxatdan o‘tish</h2>
+          <h2>{t('register')}</h2>
           <Form
             onFinish={postUser}
             layout="vertical"
@@ -110,7 +112,7 @@ function SignUpPage() {
                 <Form.Item
                   name={item.name}
                   // label={item.label + '*'}
-                  label={item.label}
+                  label={t(item.label)}
                   key={item.label}
                   rules={[{ required: true, message: item.message }]}
                   className={item.className}
@@ -118,7 +120,7 @@ function SignUpPage() {
                   {/* <Input placeholder={item.placeholder} /> */}
                   {item.select ? (
                     <Select
-                      placeholder={item.placeholder}
+                      placeholder={t(item.placeholder)}
                       onChange={(val) =>
                         item.name === 'country' ? getUniversity(val) : ''
                       }
@@ -137,7 +139,7 @@ function SignUpPage() {
                     </Select>
                   ) : (
                     // <Input.Password placeholder={item.placeholder} />
-                    <Input placeholder={item.placeholder} />
+                    <Input placeholder={t(item.placeholder) || ''} />
                   )}
                 </Form.Item>
               );
@@ -149,7 +151,7 @@ function SignUpPage() {
               type="primary"
               // onClick={() => navigate("/auth/password")}
             >
-              Ro'yxatdan o'tish
+              {t('register')}
             </Button>
           </Form>
         </div>

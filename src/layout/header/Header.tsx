@@ -4,25 +4,26 @@ import SelectLang from './components';
 import { Link } from 'react-router-dom';
 import { MenuOutlined } from '@ant-design/icons';
 import { useState } from 'react';
-
-const menu = [
-  {
-    name: 'Olimpiada haqida',
-    link: '#about',
-  },
-  {
-    name: 'Dastur',
-    link: '/plan',
-  },
-  {
-    name: 'Ishtirokchilar',
-    link: '/participants',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 function HeaderSection() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
 
+  const menu = [
+    {
+      name: t('about_olimp'),
+      link: '#about',
+    },
+    {
+      name: t('plan'),
+      link: '/plan',
+    },
+    {
+      name: t('participants'),
+      link: '/participants',
+    },
+  ];
   return (
     <div className="header">
       <Link to={'/'}>
@@ -39,7 +40,7 @@ function HeaderSection() {
         ))}
         <SelectLang />
         <Link to={'/register'}>
-          <Button type="primary">Ro‘yxatdan o‘tish</Button>
+          <Button type="primary">{t('register')}</Button>
         </Link>
       </div>
 

@@ -1,16 +1,19 @@
 import { Button } from 'antd';
 import './hero.scss';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <div className="hero-section">
       <div className="hero-section-content container">
         <div>
-          <h1>Muhammad al-Xorazmiy nomidagi xalqaro olimpiada</h1>
+          <h1>{t('main__title')}</h1>
 
           <Link to={'/register'}>
-            <Button type="primary">Ro‘yxatdan o‘tish</Button>
+            <Button type="primary">{t('register')}</Button>
           </Link>
         </div>
         <img

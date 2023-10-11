@@ -1,7 +1,9 @@
 import { BagIcon, GreenGradient, StickIcon } from 'src/assets/svg';
 import './about.scss';
+import { useTranslation } from 'react-i18next';
 
 function AboutSecttion() {
+  const { t } = useTranslation();
   return (
     <div className="section-about ">
       <div className="section-about-content container">
@@ -12,14 +14,9 @@ function AboutSecttion() {
             <GreenGradient />
           </div>
           <div>
-            <p>Olimpiada haqida</p>
+            <p>{t('about_olimp')}</p>
             <h3>
-              <span>
-                Matematika fani bo‘yicha Muhammad al-Xorazmiy nomidagi xalqaro
-                olimpiada.
-              </span>{' '}
-              O‘zbekiston respublikasi Oliy ta’lim, fan va innovatsiyalar
-              vazirligi tomonidan o‘tkaziladi.
+              <span>{t('main__title')}</span> {t('about_more')}
             </h3>
           </div>
         </div>
@@ -27,42 +24,14 @@ function AboutSecttion() {
           <div>
             <div className="section-about-info-menu">
               <div>
-                <p>Biografiya</p>
+                <p>{t('biografy')}</p>
               </div>
               <div>
-                <p>Asarlar</p>
+                <p>{t('asar')}</p>
               </div>
             </div>
             <div className="section-about-info-text">
-              <p>
-                Algebra fanining asoschisi boʻlgan Xorazmiy dunyo faniga gʻoyat
-                katta hissa qoʻshdi. “Algebra” soʻzining oʻzi esa uning
-                “Al-kitob al-muxtasar fi hisob al-jabr va al-muqobala” nomli
-                risolasidan olingan. Uning arifmetika risolasi hind raqamlariga
-                asoslangan boʻlib, hozirgi kunda biz foydalanadigan oʻnlik
-                pozitsion hisoblash tizimi va shu tizimdagi amallarning
-                Yevropada tarqalishiga sabab boʻldi. Olimning ismi —
-                “al-Xorazmiy” esa “algoritm” shaklida fanda abadiy oʻrnashib
-                qoldi. Uning geografiyaga doir asari arab tilida oʻnlab
-                geografik asarlarning yaratilishiga asos boʻldi. Xorazmiyning
-                “Zij”i Yevropada ham, Sharq mamlakatlarida ham astronomiyaning
-                taraqqiyot yoʻlini koʻrsatib berdi{' '}
-              </p>
-
-              <p>
-                Algebra fanining asoschisi boʻlgan Xorazmiy dunyo faniga gʻoyat
-                katta hissa qoʻshdi. “Algebra” soʻzining oʻzi esa uning
-                “Al-kitob al-muxtasar fi hisob al-jabr va al-muqobala” nomli
-                risolasidan olingan. Uning arifmetika risolasi hind raqamlariga
-                asoslangan boʻlib, hozirgi kunda biz foydalanadigan oʻnlik
-                pozitsion hisoblash tizimi va shu tizimdagi amallarning
-                Yevropada tarqalishiga sabab boʻldi. Olimning ismi —
-                “al-Xorazmiy” esa “algoritm” shaklida fanda abadiy oʻrnashib
-                qoldi. Uning geografiyaga doir asari arab tilida oʻnlab
-                geografik asarlarning yaratilishiga asos boʻldi. Xorazmiyning
-                “Zij”i Yevropada ham, Sharq mamlakatlarida ham astronomiyaning
-                taraqqiyot yoʻlini koʻrsatib berdi
-              </p>
+              <p>{t('algebra')}</p>
             </div>
           </div>
           <div className="section-about-info-img">

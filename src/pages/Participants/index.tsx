@@ -1,7 +1,10 @@
 import { Table } from 'antd';
 import { ColumnsType } from 'antd/es/table';
+import { useTranslation } from 'react-i18next';
 
 function ParticipantsPage() {
+  const { t } = useTranslation();
+
   interface DataType {
     key: string;
     name: string;
@@ -16,17 +19,17 @@ function ParticipantsPage() {
       key: 'key',
     },
     {
-      title: 'Ismi',
+      title: t('name'),
       dataIndex: 'name',
       key: 'name',
     },
     {
-      title: 'Tashkilot',
+      title: t('company'),
       dataIndex: 'company',
       key: 'company',
     },
     {
-      title: 'Ishtirokchi',
+      title: t('participants'),
       dataIndex: 'user',
       key: 'user',
     },
@@ -62,7 +65,7 @@ function ParticipantsPage() {
   return (
     <div className="signUp">
       <div className="signUp-form">
-        <h2>Ishtirokchilar</h2>
+        <h2>{t('participants')}</h2>
 
         <Table
           columns={columns}

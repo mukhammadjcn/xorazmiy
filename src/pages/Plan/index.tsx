@@ -1,6 +1,8 @@
 import Table, { ColumnsType } from 'antd/es/table';
+import { useTranslation } from 'react-i18next';
 
 function PlanPage() {
+  const { t } = useTranslation();
   interface DataType {
     key: number;
     time: string;
@@ -10,7 +12,7 @@ function PlanPage() {
 
   const columns: ColumnsType<DataType> = [
     {
-      title: 'Kun',
+      title: t('day'),
       key: 'day',
       onCell: (record) => ({
         rowSpan: record.key % 5 === 0 ? 5 : 0,
@@ -19,17 +21,17 @@ function PlanPage() {
         Math.floor(record.key / 5) === 0 ? 'First Day' : 'Second Day',
     },
     {
-      title: 'Vaqt',
+      title: t('time'),
       dataIndex: 'time',
       key: 'time',
     },
     {
-      title: 'Kun tartibi',
+      title: t('tartib'),
       dataIndex: 'places',
       key: 'places',
     },
     {
-      title: 'Manzil',
+      title: t('location_title'),
       dataIndex: 'location',
       key: 'location',
     },
@@ -101,7 +103,7 @@ function PlanPage() {
   return (
     <div className="signUp">
       <div className="signUp-form">
-        <h2>AKHIMO DASTURI 2023</h2>
+        <h2>{t('title')}</h2>
 
         <Table
           columns={columns}
