@@ -1,9 +1,19 @@
-import { Button, Form, Input, Select } from 'antd';
+import {
+  Button,
+  Divider,
+  Form,
+  Input,
+  InputRef,
+  Select,
+  Space,
+  message,
+} from 'antd';
 import { GiveLang, IName, codeFormData, signUpFormData } from './constants';
 import './signUp.scss';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
+import { PlusOutlined } from '@ant-design/icons';
 
 function SignUpPage() {
   const { t } = useTranslation();
@@ -23,7 +33,7 @@ function SignUpPage() {
       name_en: 'Ukraine',
     },
   ]);
-  const [universities, setUniversities] = useState<IName[]>([
+  const [universities, setUniversities] = useState<any[]>([
     {
       id: 9946,
       name_uz:
@@ -48,11 +58,58 @@ function SignUpPage() {
   };
 
   const postUser = (data: any) => {
+    const result = new FormData();
+    for (let item in data) {
+      result.append(item, data[item]);
+    }
+    console.log(result);
+
     codeSection
-      ? axios.post(`https://akhimo.uz/applications/${code}/verify/`)
-      : axios
-          .post(`https://akhimo.uz/applications/`, data)
-          .then((res) => setCode(res.data));
+      ? axios
+          .post(`https://akhimo.uz/applications/${code}/verify/`, result)
+          .then(() => {
+            message.success('Muvofaqiyatli yuborildi');
+            window.location.href = '/';
+          })
+      : axios.post(`https://akhimo.uz/applications/`, result).then((res) => {
+          setCode(res.data?.id);
+          setCodeSection(true);
+        });
+  };
+
+  const [name, setName] = useState('');
+  const inputRef = useRef<InputRef>(null);
+  const onNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
+  };
+
+  const addItem = (
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => {
+    e.preventDefault();
+    setUniversities([
+      ...universities,
+      {
+        id: name,
+        name_uz: name,
+        name_ru: name,
+        name_en: name,
+      },
+    ]);
+    console.log([
+      ...universities,
+      {
+        id: name,
+        name_uz: name,
+        name_ru: name,
+        name_en: name,
+      },
+    ]);
+
+    setName('');
+    setTimeout(() => {
+      inputRef.current?.focus();
+    }, 0);
   };
 
   useEffect(() => {
@@ -67,7 +124,7 @@ function SignUpPage() {
         <div className="signUp-form">
           <h2>{t('confirm')}</h2>
           <Form
-            onFinish={() => setCodeSection(true)}
+            onFinish={postUser}
             layout="vertical"
             requiredMark={false}
             className="form-form auth-form"
@@ -120,23 +177,73 @@ function SignUpPage() {
                   {/* <Input placeholder={item.placeholder} /> */}
                   {item.select ? (
                     <Select
+                      showSearch
+                      optionFilterProp="children"
+                      filterOption={(input, option) =>
+                        String(option?.label ?? '')
+                          .toLowerCase()
+                          .includes(input.toLowerCase())
+                      }
+                      filterSort={(optionA, optionB) =>
+                        String(optionA?.label ?? '')
+                          .toLowerCase()
+                          .localeCompare(
+                            String(optionB?.label ?? '').toLowerCase()
+                          )
+                      }
                       placeholder={t(item.placeholder)}
                       onChange={(val) =>
                         item.name === 'country' ? getUniversity(val) : ''
                       }
-                    >
-                      {item.name === 'country'
-                        ? countries?.map((item) => (
-                            <Select.Option value={item.id}>
-                              {GiveLang(item)}
-                            </Select.Option>
-                          ))
-                        : universities?.map((item) => (
-                            <Select.Option value={item.id}>
-                              {GiveLang(item)}
-                            </Select.Option>
-                          ))}
-                    </Select>
+                      options={
+                        item.name === 'country'
+                          ? countries.reduce(
+                              (all: any, curren: any) => [
+                                ...all,
+                                {
+                                  label: GiveLang(curren),
+                                  value: curren?.id,
+                                },
+                              ],
+                              []
+                            )
+                          : universities.reduce(
+                              (all: any, curren: any) => [
+                                ...all,
+                                {
+                                  label: GiveLang(curren),
+                                  value: GiveLang(curren),
+                                },
+                              ],
+                              []
+                            )
+                      }
+                      dropdownRender={(menu) =>
+                        item.label === 'university' ? (
+                          <>
+                            {menu}
+                            <Divider style={{ margin: '8px 0' }} />
+                            <Space style={{ padding: '0 8px 4px' }}>
+                              <Input
+                                placeholder="Please enter item"
+                                ref={inputRef}
+                                value={name}
+                                onChange={onNameChange}
+                              />
+                              <Button
+                                type="text"
+                                icon={<PlusOutlined />}
+                                onClick={addItem}
+                              >
+                                Add item
+                              </Button>
+                            </Space>
+                          </>
+                        ) : (
+                          <>{menu}</>
+                        )
+                      }
+                    />
                   ) : (
                     // <Input.Password placeholder={item.placeholder} />
                     <Input placeholder={t(item.placeholder) || ''} />

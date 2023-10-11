@@ -52,7 +52,7 @@ export const signUpFormData = [
   },
   {
     name: 'fourth_student',
-    label: 'student1',
+    label: 'student4',
     placeholder: 'enter_name',
     message: 'Please input your Student!',
     className: 'half',
