@@ -12,7 +12,7 @@ i18n.use(initReactI18next).init({
       translation: {
         biografy: 'Biografiya',
         asar: 'Asarlar',
-        main__title: 'Muhammad al-Xorazmiy nomidagi xalqaro olimpiada',
+        main__title: 'Muhammad al-Xorazmiy nomidagi 2-xalqaro olimpiada',
         about_olimp: 'Olimpiada haqida',
         plan: 'Dastur',
         participants: 'Ishtirokchilar',
@@ -23,7 +23,7 @@ i18n.use(initReactI18next).init({
         algebra:
           'Algebra fanining asoschisi boʻlgan Xorazmiy dunyo faniga gʻoyat katta hissa qoʻshdi. “Algebra” soʻzining oʻzi esa uning “Al-kitob al-muxtasar fi hisob al-jabr va al-muqobala” nomli risolasidan olingan. Uning arifmetika risolasi hind raqamlariga asoslangan boʻlib, hozirgi kunda biz foydalanadigan oʻnlik pozitsion hisoblash tizimi va shu tizimdagi amallarning Yevropada tarqalishiga sabab boʻldi. Olimning ismi — “al-Xorazmiy” esa “algoritm” shaklida fanda abadiy oʻrnashib qoldi. Uning geografiyaga doir asari arab tilida oʻnlab geografik asarlarning yaratilishiga asos boʻldi. Xorazmiyning “Zij”i Yevropada ham, Sharq mamlakatlarida ham astronomiyaning taraqqiyot yoʻlini koʻrsatib berdi. Algebra fanining asoschisi boʻlgan Xorazmiy dunyo faniga gʻoyat katta hissa qoʻshdi. “Algebra” soʻzining oʻzi esa uning “Al-kitob al-muxtasar fi hisob al-jabr va al-muqobala” nomli risolasidan olingan. Uning arifmetika risolasi hind raqamlariga asoslangan boʻlib, hozirgi kunda biz foydalanadigan oʻnlik pozitsion hisoblash tizimi va shu tizimdagi amallarning Yevropada tarqalishiga sabab boʻldi. Olimning ismi — “al-Xorazmiy” esa “algoritm” shaklida fanda abadiy oʻrnashib qoldi. Uning geografiyaga doir asari arab tilida oʻnlab geografik asarlarning yaratilishiga asos boʻldi. Xorazmiyning “Zij”i Yevropada ham, Sharq mamlakatlarida ham astronomiyaning taraqqiyot yoʻlini koʻrsatib berdi',
         location: 'Olimpiada o‘tkaziladigan manzil: ',
-        location1: 'Nukus shahri, Qorqqalpog‘iston O‘zbekiston',
+        location1: 'Nukus shahri, Qoraqalpog‘iston, O‘zbekiston',
         apply: 'Ariza topshirish muddati 2023-yil',
         apply1: '10-15 oktyabr',
         register_info:
@@ -71,7 +71,7 @@ i18n.use(initReactI18next).init({
       translation: {
         biografy: 'Биография',
         asar: 'Работы',
-        main__title: 'Международная олимпиада имени Мухаммада аль-Хорезми.',
+        main__title: 'Международная 2-олимпиада имени Мухаммада аль-Хорезми.',
         about_olimp: 'Об олимпиаде',
         plan: 'Программа',
         participants: 'Участники',
@@ -130,7 +130,7 @@ i18n.use(initReactI18next).init({
         biografy: 'Biografy',
         asar: 'Works',
         main__title:
-          'The International Olympiad named after Muhammad al-Khorezmi.',
+          'The 2-International Olympiad named after Muhammad al-Khorezmi.',
         about_olimp: 'About the Olympiad',
         plan: 'Program',
         participants: 'Participants',

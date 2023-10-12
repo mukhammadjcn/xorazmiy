@@ -15,6 +15,10 @@ function HeroSection() {
           <Link to={'/register'}>
             <Button type="primary">{t('register')}</Button>
           </Link>
+
+          <p style={{ marginTop: 48, fontSize: 20 }}>
+            Uzbekistan - Nukus - 2023
+          </p>
         </div>
         <img
           src="/img/main.png"
