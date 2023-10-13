@@ -1,9 +1,22 @@
 import Table, { ColumnsType } from 'antd/es/table';
 import { useTranslation } from 'react-i18next';
 import { data, DataType } from 'src/pages/Plan/data';
+import { dataEng } from 'src/pages/Plan/dataEng';
+
+const values = {
+  uz: data,
+  en: dataEng,
+};
+
+type Lang = 'uz' | 'en';
 
 function PlanPage() {
-  const { t } = useTranslation();
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
+
+  const dataSource = values[language as Lang];
 
   const columns: ColumnsType<DataType> = [
     {
@@ -20,6 +33,7 @@ function PlanPage() {
       dataIndex: 'time',
       align: 'center',
       key: 'time',
+      width: 150,
     },
     {
       title: t('tartib'),
@@ -41,7 +55,7 @@ function PlanPage() {
 
         <Table
           columns={columns}
-          dataSource={data}
+          dataSource={dataSource}
           pagination={false}
           bordered
           scroll={{ x: 800 }}
