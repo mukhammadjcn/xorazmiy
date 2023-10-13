@@ -68,8 +68,9 @@ function SignUpPage() {
       ? axios
           .post(`https://akhimo.uz/applications/${code}/verify/`, result)
           .then(() => {
-            message.success('Muvofaqiyatli yuborildi');
-            window.location.href = '/';
+            message.success('Muvofaqiyatli yuborildi').then(() => {
+              window.location.href = '/';
+            });
           })
       : axios.post(`https://akhimo.uz/applications/`, result).then((res) => {
           setCode(res.data?.id);

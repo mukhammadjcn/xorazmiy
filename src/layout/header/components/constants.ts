@@ -12,8 +12,8 @@ export const LanguageData: IlangData[] = [
     name: 'Uzbek',
     short_name: 'uz',
   },
-  {
-    name: 'Russian',
-    short_name: 'ru',
-  },
+  // {
+  //   name: 'Russian',
+  //   short_name: 'ru',
+  // },
 ];
