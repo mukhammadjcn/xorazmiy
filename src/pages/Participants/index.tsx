@@ -1,9 +1,20 @@
 import { Table } from 'antd';
 import { ColumnsType } from 'antd/es/table';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { GiveLang } from '../auth/signUp/constants';
 
 function ParticipantsPage() {
   const { t } = useTranslation();
+  const [users, setUsers] = useState([
+    {
+      key: '1',
+      name: 'Anvar Reyimberganov',
+      company: 'Urgench State University (Uzbekistan)',
+      user: 'Team leader',
+    },
+  ]);
 
   interface DataType {
     key: string;
@@ -35,32 +46,28 @@ function ParticipantsPage() {
     },
   ];
 
-  const data: DataType[] = [
-    {
-      key: '1',
-      name: 'Anvar Reyimberganov',
-      company: 'Urgench State University (Uzbekistan)',
-      user: 'Team leader',
-    },
-    {
-      key: '2',
-      name: 'Rasulbek Sharipov',
-      company: 'Karshi State University (Uzbekistan)',
-      user: 'Participant',
-    },
-    {
-      key: '3',
-      name: "Rasulbek Qo'shnazarov",
-      company: 'UrSU (Uzbekistan)',
-      user: 'Participant',
-    },
-    {
-      key: '3',
-      name: "Rasulbek Qo'shnazarov",
-      company: 'UrSU (Uzbekistan)',
-      user: 'Participant',
-    },
-  ];
+  const GetUsers = () => {
+    axios.get(`https://akhimo.uz/applications/list/`).then((res) => {
+      setUsers(
+        res.data?.reduce(
+          (acc: any, cur: any, index: number) => [
+            ...acc,
+            {
+              key: index + 1,
+              name: cur?.team_leader,
+              company: `${cur?.university} (${GiveLang(cur?.country)})`,
+              user: 'Team leader',
+            },
+          ],
+          []
+        )
+      );
+    });
+  };
+
+  useEffect(() => {
+    GetUsers();
+  }, []);
 
   return (
     <div className="signUp">
@@ -68,10 +75,10 @@ function ParticipantsPage() {
         <h2>{t('participants')}</h2>
 
         <Table
-          columns={columns}
-          dataSource={data}
-          pagination={false}
           bordered
+          columns={columns}
+          dataSource={users}
+          pagination={false}
           scroll={{ x: 800 }}
         />
       </div>
