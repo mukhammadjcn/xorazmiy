@@ -1,103 +1,51 @@
 import Table, { ColumnsType } from 'antd/es/table';
 import { useTranslation } from 'react-i18next';
+import { data, DataType } from 'src/pages/Plan/data';
+import { dataEng } from 'src/pages/Plan/dataEng';
+
+const values = {
+  uz: data,
+  en: dataEng,
+};
+
+type Lang = 'uz' | 'en';
 
 function PlanPage() {
-  const { t } = useTranslation();
-  interface DataType {
-    key: number;
-    time: string;
-    places: string;
-    location: string;
-  }
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
+
+  const dataSource = values[language as Lang];
 
   const columns: ColumnsType<DataType> = [
     {
       title: t('day'),
-      key: 'day',
+      key: 'date',
+      dataIndex: 'date',
       onCell: (record) => ({
-        rowSpan: record.key % 5 === 0 ? 5 : 0,
+        rowSpan: record.rowKey !== 0 ? record.rowKey : 0,
       }),
-      render: (_, record) =>
-        Math.floor(record.key / 5) === 0 ? 'First Day' : 'Second Day',
+      align: 'center',
     },
     {
       title: t('time'),
       dataIndex: 'time',
+      align: 'center',
       key: 'time',
+      width: 150,
     },
     {
       title: t('tartib'),
-      dataIndex: 'places',
-      key: 'places',
+      dataIndex: 'place',
+      align: 'center',
+      key: 'place',
     },
-    {
-      title: t('location_title'),
-      dataIndex: 'location',
-      key: 'location',
-    },
-  ];
-
-  const data: DataType[] = [
-    {
-      key: 0,
-      time: '09:00-20:00',
-      places: 'Arrival and Registration (UrSU)',
-      location: 'Location',
-    },
-    {
-      key: 1,
-      time: '09:00-20:00',
-      places: 'Arrival and Registration (UrSU)',
-      location: 'Location',
-    },
-    {
-      key: 2,
-      time: '09:00-20:00',
-      places: 'Arrival and Registration (UrSU)',
-      location: 'Location',
-    },
-    {
-      key: 3,
-      time: '09:00-20:00',
-      places: 'Arrival and Registration (UrSU)',
-      location: 'Location',
-    },
-    {
-      key: 4,
-      time: '09:00-20:00',
-      places: 'Arrival and Registration (UrSU)',
-      location: 'Location',
-    },
-    {
-      key: 5,
-      time: '09:00-20:00',
-      places: 'Arrival and Registration (UrSU)',
-      location: 'Location',
-    },
-    {
-      key: 6,
-      time: '09:00-20:00',
-      places: 'Arrival and Registration (UrSU)',
-      location: 'Location',
-    },
-    {
-      key: 7,
-      time: '09:00-20:00',
-      places: 'Arrival and Registration (UrSU)',
-      location: 'Location',
-    },
-    {
-      key: 8,
-      time: '09:00-20:00',
-      places: 'Arrival and Registration (UrSU)',
-      location: 'Location',
-    },
-    {
-      key: 9,
-      time: '09:00-20:00',
-      places: 'Arrival and Registration (UrSU)',
-      location: 'Location',
-    },
+    // {
+    //   title: t('location_title'),
+    //   dataIndex: 'location',
+    //   key: 'location',
+    // },
   ];
 
   return (
@@ -107,7 +55,7 @@ function PlanPage() {
 
         <Table
           columns={columns}
-          dataSource={data}
+          dataSource={dataSource}
           pagination={false}
           bordered
           scroll={{ x: 800 }}
