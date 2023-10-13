@@ -8,7 +8,13 @@ import {
   Space,
   message,
 } from 'antd';
-import { GiveLang, IName, codeFormData, signUpFormData } from './constants';
+import {
+  GiveLang,
+  IName,
+  codeFormData,
+  signUpFormData,
+  sleep,
+} from './constants';
 import './signUp.scss';
 import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
@@ -62,15 +68,14 @@ function SignUpPage() {
     for (let item in data) {
       result.append(item, data[item]);
     }
-    console.log(result);
 
     codeSection
       ? axios
           .post(`https://akhimo.uz/applications/${code}/verify/`, result)
-          .then(() => {
-            message.success('Muvofaqiyatli yuborildi').then(() => {
-              window.location.href = '/';
-            });
+          .then(async () => {
+            message.success('Muvofaqiyatli yuborildi', 3000);
+            await sleep(3000);
+            window.location.href = '/';
           })
       : axios.post(`https://akhimo.uz/applications/`, result).then((res) => {
           setCode(res.data?.id);

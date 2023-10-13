@@ -99,3 +99,6 @@ export interface IName {
 export const GiveLang = (data: IName) => {
   return localStorage.getItem('lang') === 'en' ? data?.name_en : data?.name_uz;
 };
+
+export const sleep = (delay: number) =>
+  new Promise((resolve) => setTimeout(resolve, delay));
