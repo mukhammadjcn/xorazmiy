@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { NewsCardData } from './constants';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 function NewsSection() {
   const { t } = useTranslation();
@@ -49,7 +50,9 @@ function NewsSection() {
             <div className="section-news-card">
               <img src={news.img} />
               <div>
-                <p>{news.title}</p>
+                <Link to={`/news?title=${news.title}`}>
+                  <p>{news.title}</p>
+                </Link>
                 <span>{news.date}</span>
               </div>
             </div>
