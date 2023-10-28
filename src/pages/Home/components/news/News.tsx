@@ -7,11 +7,12 @@ import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { NewsCardData } from './constants';
+import { news } from './constants';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 function NewsSection() {
+  const lang = localStorage.getItem('lang') === 'en';
   const { t } = useTranslation();
   const swiperRef = useRef<SwiperCore>();
   return (
@@ -45,15 +46,15 @@ function NewsSection() {
           },
         }}
       >
-        {NewsCardData.map((news) => (
+        {news.map((item) => (
           <SwiperSlide>
             <div className="section-news-card">
-              <img src={news.img} />
+              <img src={item.img} />
               <div>
-                <Link to={`/news?title=${news.title}`}>
-                  <p>{news.title}</p>
+                <Link to={`/news?title=${item.title}`}>
+                  <p>{lang ? item.title_en : item?.title}</p>
                 </Link>
-                <span>{news.date}</span>
+                <span>{item.date}</span>
               </div>
             </div>
           </SwiperSlide>
